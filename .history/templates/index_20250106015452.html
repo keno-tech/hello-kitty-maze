@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Kitty Maze</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.min.js"></script>
+    
+</head>
+<body>
+
+<!-- Main Content (Game Area) -->
+<div class="game-container">
+    <h1>Hello Kitty Maze</h1>
+    <!-- Game Container -->
+    <div id="game-container"></div>
+</div>
+
+<!-- Leaderboard (Right Sidebar) -->
+<div class="leaderboard-container">
+    <h2>Leaderboard</h2>
+    <div id="leaderboard-list">
+        <!-- The leaderboard items will be dynamically added here -->
+        {% for entry in leaderboard %}
+            <div class="leaderboard-item">
+                <span>{{ entry[0] }}</span>
+                <span>{{ entry[1] }}</span>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    <style>
+        /* Basic styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background-color: #f0f0f0;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+            margin-right: 270px; /* To make space for the leaderboard */
+        }
+
+        .leaderboard-container {
+            width: 250px;
+            padding: 20px;
+            background-color: #f4f4f4;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            right: 0;
+            top: 0;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        .leaderboard-item {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .leaderboard-item span {
+            font-weight: bold;
+        }
+
+        #game-container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="content">
+    <!-- Your main content goes here -->
+    <h1>Hello Kitty Game</h1>
+    
+    <!-- Game Container -->
+    <div id="game-container">
+        <p>Welcome to the game! Click below to start:</p>
+        <button id="start-game">Start Game</button>
+        <div id="game-output"></div>
+    </div>
+    
+    <script>
+        // Basic Game Logic Placeholder
+        document.getElementById('start-game').addEventListener('click', function() {
+            document.getElementById('game-output').innerHTML = "Game Started!";
+            // Add your game logic here
+        });
+    </script>
+</div>
+
+<div class="leaderboard-container">
+    <h2>Leaderboard</h2>
+    <div id="leaderboard-list">
+        <!-- The leaderboard items will be displayed here -->
+        {% for entry in leaderboard %}
+            <div class="leaderboard-item">
+                <span>{{ entry[0] }}</span>
+                <span>{{ entry[1] }}</span>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+</html>
